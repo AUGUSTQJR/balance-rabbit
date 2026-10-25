@@ -2,7 +2,7 @@
 
 一只常驻桌面、置顶悬浮的小兔子：点它就能看 API 余额、今日 / 近 7 天消费趋势、Token 用量和主力模型。
 
-支持 **macOS / Windows / Linux 三端**，另有 **iOS 脚本组件版**。全部是本机原生程序，不依赖 Electron / Python 环境，体积小、内存低、API Key 只存本机。
+支持 **macOS / Windows / Linux 三端**。全部是本机原生程序，不依赖 Electron 环境，体积小、内存低、API Key 只存本机。
 
 <p align="center">
   <img src="docs/screenshots/pet.png" width="150" alt="余额兔">
@@ -24,7 +24,6 @@
 | macOS 12+（Apple 芯片 / Intel 通用） | [`BalanceRabbit-v1.3.0-macOS.zip`](https://github.com/AUGUSTQJR/balance-rabbit/releases/download/v1.3.0-macOS/BalanceRabbit-v1.3.0-macOS.zip) | v1.3.0 | 1.1 MB |
 | Windows 10 / 11 | [`BalanceRabbit-v1.3.0-Windows.zip`](https://github.com/AUGUSTQJR/balance-rabbit/releases/download/v1.3.0-windows/BalanceRabbit-v1.3.0-Windows.zip) | v1.3.0 | 414 KB |
 | Linux（Python 3.9+ / Qt6） | [`BalanceRabbit-v1.1.0-Linux.zip`](https://github.com/AUGUSTQJR/balance-rabbit/releases/download/v1.1.0-linux/BalanceRabbit-v1.1.0-Linux.zip) | v1.1.0 | 70 KB |
-| iPhone | [`ios/余额兔.js`](ios/余额兔.js)（Scriptable 脚本） | v1.4.0 | — |
 
 全部历史版本见 **[Releases](../../releases)** 页面。解压密码：无，每个 zip 里都带一份 `使用说明.txt`，照着做即可。
 
@@ -67,11 +66,6 @@ cd 余额兔-v1.1.0-Linux && ./install.sh --autostart   # 装到 ~/.local/share/
 
 基于 PySide6 / Qt 6。部分发行版需先装依赖：`sudo apt install libxcb-cursor0 libxkbcommon-x11-0`。
 
-### iPhone
-
-用免费的 [Scriptable](https://scriptable.app) App 跑 `ios/余额兔.js`：主屏小组件、iOS 16 锁屏组件、App 内明细表。
-详细步骤见 [ios/使用说明.md](ios/使用说明.md)。
-
 ## 关于 API Key
 
 - 程序只读**你自己填的** Key，**不联网上传任何东西**，数据只在你本机和 API 服务方之间流转。
@@ -86,7 +80,6 @@ cd 余额兔-v1.1.0-Linux && ./install.sh --autostart   # 装到 ~/.local/share/
 pet/       macOS 版（Swift + AppKit，纯 swiftc 编译）
 windows/   Windows 版（C# / .NET Framework 4.8 WinForms）
 linux/     Linux 版（Python 3.9+ / PySide6）
-ios/       iOS 版（Scriptable 脚本，无原生 App）
 design/    兔子形象设计稿
 docs/      截图
 tools/     交叉编译工具链说明（实际文件不入库）
@@ -97,7 +90,6 @@ tools/     交叉编译工具链说明（实际文件不入库）
 - [macOS 版说明](pet/README.md) · [设计文档](pet/DESIGN.md)
 - [Windows 版说明](windows/README.md)
 - [Linux 版说明](linux/README.md)
-- [iOS 版说明](ios/使用说明.md)
 
 ## 常见问题
 

@@ -38,3 +38,6 @@ id_ed25519*
 **/obj/
 AGENTS.md
 _local_versions_rabbit_2026-10-25/
+.deploykeys/
+.release/
+ios/
