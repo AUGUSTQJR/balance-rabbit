@@ -1,5 +1,8 @@
 # 余额兔 Windows 版改进记录（供 macOS 版同步）
 
+> 中文文档 · Chinese only. 记录 Windows 移植过程中每条用户意见、根因与最终做法，
+> 用于把改进反向同步到 macOS 版。日常使用无需阅读。
+
 > **macOS 落地状态（2026-10-20，v1.1.0）**：本文 12 条验收项已全部在 macOS 版实现并通过核对，
 > 产物 `macos/dist/余额兔-v1.1.0-macOS.zip`；逐条做法与验证见 `macos/DESIGN.md` 第 11 节。
 

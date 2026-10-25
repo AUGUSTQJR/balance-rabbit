@@ -229,7 +229,7 @@ xattr -cr 余额兔.app && codesign --force --deep --sign - 余额兔.app
 
 ## 11. v1.1.0：同步 Windows v1.0.5 的全部改进（2026-10-20）
 
-对照 `../余额兔-Windows改进记录-供macOS同步.md` 逐条落地，验收结果：
+对照 `../docs/WINDOWS-SYNC-NOTES.md` 逐条落地，验收结果：
 
 | 验收项 | macOS 做法 | 结果 |
 |---|---|---|
