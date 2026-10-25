@@ -41,3 +41,6 @@ _local_versions_rabbit_2026-10-25/
 .deploykeys/
 .release/
 ios/
+
+# 发布令牌（本机专用，绝不入库）
+.env.release

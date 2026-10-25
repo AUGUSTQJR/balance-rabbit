@@ -21,9 +21,9 @@
 
 | 系统 | 下载文件 | 版本 | 大小 |
 | --- | --- | --- | --- |
-| macOS 12+（Apple 芯片 / Intel 通用） | [`BalanceRabbit-v1.3.0-macOS.zip`](https://github.com/AUGUSTQJR/balance-rabbit/releases/download/v1.3.0-macOS/BalanceRabbit-v1.3.0-macOS.zip) | v1.3.0 | 1.1 MB |
-| Windows 10 / 11 | [`BalanceRabbit-v1.3.0-Windows.zip`](https://github.com/AUGUSTQJR/balance-rabbit/releases/download/v1.3.0-windows/BalanceRabbit-v1.3.0-Windows.zip) | v1.3.0 | 414 KB |
-| Linux（Python 3.9+ / Qt6） | [`BalanceRabbit-v1.1.0-Linux.zip`](https://github.com/AUGUSTQJR/balance-rabbit/releases/download/v1.1.0-linux/BalanceRabbit-v1.1.0-Linux.zip) | v1.1.0 | 70 KB |
+| macOS 12+（Apple 芯片 / Intel 通用） | [`余额兔-v1.3.0-macOS.zip`](https://github.com/AUGUSTQJR/balance-rabbit/tree/main/macos/dist) | v1.3.0 | 1.1M |
+| Windows 10 / 11 | [`余额兔-v1.3.0-Windows-免安装.zip`](https://github.com/AUGUSTQJR/balance-rabbit/tree/main/windows/dist) | v1.3.0 | 416K |
+| Linux（Python 3.9+ / Qt6） | [`余额兔-v1.1.0-Linux.zip`](https://github.com/AUGUSTQJR/balance-rabbit/tree/main/linux/dist) | v1.1.0 | 72K |
 
 全部历史版本见 **[Releases](../../releases)** 页面。解压密码：无，每个 zip 里都带一份 `使用说明.txt`，照着做即可。
 
