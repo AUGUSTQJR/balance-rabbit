@@ -1,0 +1,76 @@
+余额兔 · Linux 版 使用说明
+============================
+
+一只住在桌面上的兔子：点一下弹出余额气泡（余额、今日花费、近 7 天柱状图、Token、模型用量），
+数据来自 rabbitj.top（anyGPT）的账户接口，API Key 只保存在本机、只属于当前 Linux 用户。
+
+一、运行环境
+------------
+- Linux 桌面：Ubuntu / Debian / Fedora / Arch 等常见发行版
+- 桌面环境：GNOME / KDE / Xfce 均可；推荐 X11 会话或带 XWayland 的 Wayland 会话
+- Python 3.9 或更高（Ubuntu 20.04 起自带）
+- 首次安装需要联网（从 pip 源下载 PySide6，约 100 MB）
+
+二、安装
+--------
+1. 解压 zip，进入目录，执行：
+      ./install.sh
+   想顺便加入开机自启：
+      ./install.sh --autostart
+2. 安装完成后，在应用列表里搜索「余额兔」，或终端执行：
+      ~/.local/bin/balance-rabbit
+
+如果提示缺少依赖（Ubuntu / Debian）：
+      sudo apt install python3-venv libxcb-cursor0 libxkbcommon-x11-0 libegl1 libgl1
+
+三、第一次使用
+--------------
+1. 启动后会弹出「填写你自己的 rabbitj.top API Key」。
+   Key 以 sk- 开头，在 rabbitj.top 的账号页复制。
+2. 每个 Linux 用户 / 每台电脑都要填自己的 Key；填别人的 Key 会显示别人的余额。
+   Key 保存在本机密钥环（没装 secret-tool 时保存为仅本人可读的文件）。
+3. 以后换账号：右键兔子 →「更换 API Key（换账号）…」。
+
+四、操作
+--------
+- 左键点兔子：弹出 / 收起余额气泡
+- 左键点气泡卡片：立即刷新；点气泡底部的小尖角：关闭
+- 鼠标悬停 / 点击柱状图：查看某一天的花费与请求数，再点一次取消
+- 拖动兔子：移动位置；拖到屏幕左 / 右边缘 28 像素内松手 → 吸附成边缘小图标
+- 悬停边缘图标：向外探出；点击：兔子弹回；按住可沿边缘上下拖动
+- 右键兔子 / 边缘图标 / 托盘图标：完整菜单
+  （刷新、复制余额、充值、自动刷新、低余额提醒、开机自启、兔子大小、
+    边缘图标样式、隐藏兔子、把兔子放回右下角、换 Key、退出）
+- Ctrl（或 Alt）+ 滚轮：缩放兔子（96～320）
+- 余额低于阈值会弹系统通知（默认 ¥20，6 小时最多一次）
+
+五、Wayland 说明
+----------------
+Wayland 不允许程序自己定位窗口，桌面宠物和边缘吸附会失效。
+启动器在检测到 XWayland（同时存在 WAYLAND_DISPLAY 和 DISPLAY）时会自动改用 xcb，
+在 XWayland 下功能完整。若想强制使用原生 Wayland：
+      QT_QPA_PLATFORM=wayland balance-rabbit
+此时兔子能显示，但位置由系统决定、吸附不可用。
+
+六、托盘图标
+------------
+Ubuntu 的 GNOME 默认支持托盘图标（AppIndicator）；个别精简桌面没有托盘时，
+托盘相关功能不可见，但右键点兔子依然能打开全部菜单。
+
+七、卸载
+--------
+      ./uninstall.sh          # 删除程序，保留设置和 Key
+      ./uninstall.sh --purge  # 连设置和 Key 一起删除
+
+八、常见问题
+------------
+1. 启动没反应 / 提示 Qt platform plugin "xcb"：
+      sudo apt install libxcb-cursor0 libxkbcommon-x11-0
+2. 想重新填写 Key：删掉 ~/.config/balance-rabbit/api-key 后重启，或用菜单「更换 API Key」。
+3. 余额和网页不一致：气泡里的余额是实时接口值；今日 / 近 7 天按服务器本地时间切天。
+   菜单里若显示「接口状态：is_active = false」，只要余额能正常刷新就可以忽略（接口语义未知，
+   不能当作账号停用；真正停用时接口会返回 403）。
+   刷新失败时会保留上一次数据，并在气泡底部显示红色错误提示。
+4. 开机自启：菜单里的「开机自动启动」，或安装时加 --autostart。
+
+版本：v1.1.0

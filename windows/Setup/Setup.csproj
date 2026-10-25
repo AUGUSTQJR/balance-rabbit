@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <UseWindowsForms>true</UseWindowsForms>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>Setup</AssemblyName>
+    <RootNamespace>BalanceRabbit.Setup</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+    <Deterministic>true</Deterministic>
+    <DebugType>none</DebugType>
+    <Version>1.0.5</Version>
+    <FileVersion>1.0.5.0</FileVersion>
+    <Product>余额兔安装程序</Product>
+    <AssemblyTitle>余额兔 Windows 安装程序</AssemblyTitle>
+    <Company>rabbitj.top</Company>
+    <Copyright>Copyright © 2026</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\BalanceRabbit\bin\Release\net48\BalanceRabbit.exe"
+                      LogicalName="Setup.payload.app.exe" />
+    <EmbeddedResource Include="..\BalanceRabbit\bin\Release\net48\BalanceRabbit.exe.config"
+                      LogicalName="Setup.payload.app.config" />
+    <EmbeddedResource Include="使用说明.txt" LogicalName="Setup.readme.txt" />
+    <EmbeddedResource Include="icon.ico" LogicalName="Setup.icon.ico" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,40 @@
+# macOS
+.DS_Store
+__MACOSX/
+
+# ---- 编译产物 / 缓存（体积大，不入库）----
+pet/build/
+pet/余额兔.app/
+windows/BalanceRabbit/bin/
+windows/BalanceRabbit/obj/
+windows/Setup/bin/
+windows/Setup/obj/
+linux/build/
+nbuild/
+*.o
+*.dSYM/
+
+# ---- 交叉编译工具链（748MB，本地自备，见 tools/README）----
+tools/dotnet/
+tools/nuget/
+tools/home/
+
+# ---- 测试与临时文件 ----
+linux/.venv/
+linux/__pycache__/
+**/__pycache__/
+*.pyc
+*.log
+run.log
+
+# ---- 本机私密数据：绝不上传 ----
+.credentials.yaml
+*.key
+*.pem
+id_ed25519*
+
+# .NET 编译产物（所有子项目）
+**/bin/
+**/obj/
+AGENTS.md
+_local_versions_rabbit_2026-10-25/
