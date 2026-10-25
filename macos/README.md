@@ -3,14 +3,14 @@
 一只常驻桌面、置顶悬浮的小兔子：点它就能看 API 余额、今日/近 7 天消费趋势、Token 用量和主力模型。
 原生 macOS 应用（Swift + AppKit），不依赖 Python / Node / Electron，双击即用。
 
-![兔子](build/preview/pet.png)
+![兔子](../docs/screenshots/pet.png)
 
-![气泡](build/preview/bubble.png)
+![气泡](../docs/screenshots/bubble.png)
 
 吸附后的样子（灰底模拟屏幕外的部分，实际只露一半）：
 
-![吸附-左](build/preview/dock_arrow_left_masked.png)
-![吸附-右](build/preview/dock_arrow_right_masked.png)
+![吸附-左](../docs/screenshots/dock_left.png)
+![吸附-右](../docs/screenshots/dock_right.png)
 
 ## 快速开始
 
