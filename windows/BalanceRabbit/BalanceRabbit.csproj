@@ -28,7 +28,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="icon.ico" LogicalName="BalanceRabbit.icon.ico" />
-    <!-- 兔子形象：与 macOS 版同一份静态图片（build.sh 会从 pet/Assets 同步） -->
+    <!-- 兔子形象：与 macOS 版同一份静态图片（build.sh 会从 macos/Assets 同步） -->
     <EmbeddedResource Include="Assets/pet_sky.png" LogicalName="BalanceRabbit.pet_sky.png" />
     <EmbeddedResource Include="Assets/pet_sky_low.png" LogicalName="BalanceRabbit.pet_sky_low.png" />
   </ItemGroup>

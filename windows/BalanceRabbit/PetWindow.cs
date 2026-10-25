@@ -9,7 +9,7 @@ namespace BalanceRabbit
     /// 桌面上的兔子窗口：只负责「贴图 + 交互」。
     ///
     /// 形象是两张静态 PNG（Assets/pet_sky.png / pet_sky_low.png，与 macOS 版同一份图，
-    /// 由 pet/Tools 生成），运行时不画任何矢量路径，所以不会出现某个平台耳朵错位；
+    /// 由 macos/Tools 生成），运行时不画任何矢量路径，所以不会出现某个平台耳朵错位；
     /// 也没有呼吸/眨眼/耳朵摆动/悬停放大等动画。
     /// </summary>
     public sealed class PetWindow : LayeredForm

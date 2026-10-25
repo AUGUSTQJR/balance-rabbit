@@ -3,8 +3,8 @@
 __MACOSX/
 
 # ---- 编译产物 / 缓存（体积大，不入库）----
-pet/build/
-pet/余额兔.app/
+macos/build/
+macos/余额兔.app/
 windows/BalanceRabbit/bin/
 windows/BalanceRabbit/obj/
 windows/Setup/bin/

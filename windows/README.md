@@ -1,6 +1,6 @@
 # 余额兔 · Windows 版
 
-macOS 版「余额兔」的 Windows 移植：桌面兔子 + 余额气泡 + 托盘常驻，功能对齐 `pet/DESIGN.md`。
+macOS 版「余额兔」的 Windows 移植：桌面兔子 + 余额气泡 + 托盘常驻，功能对齐 `macos/DESIGN.md`。
 纯 .NET Framework 4.8 WinForms，无第三方依赖、无运行时安装包（Win10 1903+ / Win11 自带 4.8）；
 兔子形象自 v1.3.0 起与 macOS 共用同一份静态 PNG（编译进 exe），运行时不画矢量路径、无动画。
 

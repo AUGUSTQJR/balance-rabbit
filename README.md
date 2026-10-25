@@ -77,7 +77,7 @@ cd 余额兔-v1.1.0-Linux && ./install.sh --autostart   # 装到 ~/.local/share/
 ## 目录结构
 
 ```
-pet/       macOS 版（Swift + AppKit，纯 swiftc 编译）
+macos/       macOS 版（Swift + AppKit，纯 swiftc 编译）
 windows/   Windows 版（C# / .NET Framework 4.8 WinForms）
 linux/     Linux 版（Python 3.9+ / PySide6）
 design/    兔子形象设计稿
@@ -87,7 +87,7 @@ tools/     交叉编译工具链说明（实际文件不入库）
 
 ## 各端说明
 
-- [macOS 版说明](pet/README.md) · [设计文档](pet/DESIGN.md)
+- [macOS 版说明](macos/README.md) · [设计文档](macos/DESIGN.md)
 - [Windows 版说明](windows/README.md)
 - [Linux 版说明](linux/README.md)
 

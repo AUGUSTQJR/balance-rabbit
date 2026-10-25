@@ -17,10 +17,10 @@ fi
 
 cd "$ROOT/windows/BalanceRabbit"
 
-# 兔子形象图片与 macOS 版共用同一份（pet/Assets 由 macOS 的 export_assets.sh 生成）
-if [ -f "$ROOT/pet/Assets/pet_sky.png" ]; then
+# 兔子形象图片与 macOS 版共用同一份（macos/Assets 由 macOS 的 export_assets.sh 生成）
+if [ -f "$ROOT/macos/Assets/pet_sky.png" ]; then
   mkdir -p Assets
-  cp "$ROOT/pet/Assets/pet_sky.png" "$ROOT/pet/Assets/pet_sky_low.png" Assets/
+  cp "$ROOT/macos/Assets/pet_sky.png" "$ROOT/macos/Assets/pet_sky_low.png" Assets/
 fi
 
 "$DOTNET" build -c Release -v:m

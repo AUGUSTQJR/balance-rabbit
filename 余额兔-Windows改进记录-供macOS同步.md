@@ -1,7 +1,7 @@
 # 余额兔 Windows 版改进记录（供 macOS 版同步）
 
 > **macOS 落地状态（2026-10-20，v1.1.0）**：本文 12 条验收项已全部在 macOS 版实现并通过核对，
-> 产物 `pet/dist/余额兔-v1.1.0-macOS.zip`；逐条做法与验证见 `pet/DESIGN.md` 第 11 节。
+> 产物 `macos/dist/余额兔-v1.1.0-macOS.zip`；逐条做法与验证见 `macos/DESIGN.md` 第 11 节。
 
 
 > 用途：本文件把「从 macOS 版移植到 Windows 之后，用户提的每一条意见 + 根因 + 最终做法 + 关键数值」
@@ -216,23 +216,23 @@ Windows 版 = macOS 原版功能 + 下列改动：**Key 严格按人隔离**、*
 > 前提：macOS 版现有功能（吸附只左右、箭头标签、菜单栏金额、Keychain、单实例、开机自启）
 > **不要破坏**，只在其上增改。
 
-**`pet/Sources/APIClient.swift`**
+**`macos/Sources/APIClient.swift`**
 - 新增 `fetchBalance(key)`：GET `/v1/balance`，解析 `balance_cny`/`balance`、`user_id`/`account_user_id`，
   支持 `data` 嵌套；失败返回 nil，不抛错。
 - `loadStats`：先取 balance（拿 accountUserId）；有 id 时过滤 usage 记录的 `user_id`；
   余额优先用接口值；无记录但有余额接口时不再报「无记录」；多账户时总请求数置空。
 - 刷新失败：保留上一次 stats，仅写 error。
 
-**`pet/Sources/Models.swift`**
+**`macos/Sources/Models.swift`**
 - `Stats` 加 `accountUserId: Int?`、`multipleAccounts: Bool`。
 - `UsageItem` 加 `userId: Int?`（解析 `user_id`）。
 - 新增 `BalanceInfo { balance: Double; userId: Int? }`。
 
-**`pet/Sources/Credentials.swift`**
+**`macos/Sources/Credentials.swift`**
 - 删除 `~/.dsh/.credentials.yaml` 回退；只读当前用户 Keychain（+ `RABBIT_API_KEY` 环境变量）。
 - 提供 `hasKey`、`keyHint`（后 4 位，形如 `…4590`）。
 
-**`pet/Sources/AppDelegate.swift`**
+**`macos/Sources/AppDelegate.swift`**
 - 首启：若已有 Key 且是「刚安装/更新」（可用安装标记或版本变化判断），弹确认框，默认「否」→ 重填。
 - 菜单：「更换 API Key（换账号）…」/「设置 API Key…」+「当前 Key 尾号 …」+「账户 #…」；
   多账户时提示。Key 对话框文案同第 A1 条。
@@ -241,7 +241,7 @@ Windows 版 = macOS 原版功能 + 下列改动：**Key 严格按人隔离**、*
 - 托盘双击（双击显示兔子），单击/双击用系统双击间隔区分。
 - 吸附开始记录所在 `NSScreen`，后续吸附/拖拽/气泡都用它，避免混合缩放取错屏。
 
-**`pet/Sources/BubbleView.swift`**
+**`macos/Sources/BubbleView.swift`**
 - 峰值标签：实测文字宽高（`NSString.size(withAttributes:)`），右对齐、clamp 在气泡内；
   柱最大高度 28（设计点），标签画在最高柱上方 2pt。
 - 柱状图交互：`NSTrackingArea` + `mouseMoved`/`mouseDown`；命中 `x∈[24,274]`、
@@ -249,15 +249,15 @@ Windows 版 = macOS 原版功能 + 下列改动：**Key 严格按人隔离**、*
 - 文本布局全部按实测宽度，不要写死会压字的矩形；设计画布 300×282，retina 只做整体 scale。
 - 卡片 hitTest 返回自身（尖角范围内也算），确保点击不穿透到背后窗口。
 
-**`pet/Sources/Support.swift`**
+**`macos/Sources/Support.swift`**
 - 设置原子写；数据目录写失败降级（Application Support → Caches → 内存）并提示一次；
 - 统一 `BalanceRabbit/1.0 (Windows)` 之外的 User-Agent 不需要改。
 
-**`pet/package.sh`**
+**`macos/package.sh`**
 - 产物命名 `余额兔-vX.Y.Z-macOS.zip`；zip 内含使用说明；版本号来源统一（避免旧文件覆盖）。
 - `DESIGN.md` / `README` 里补充 vX.Y.Z 变更说明。
 
-**`pet/Sources/` 里不要动的既有行为**
+**`macos/Sources/` 里不要动的既有行为**
 - 吸附只有左右边缘；吸附图标为箭头标签；点击兔子弹气泡；菜单栏 `¥xx.xx`；单实例；
   边缘图标样式菜单；`Esc`/点击别处行为等。
 

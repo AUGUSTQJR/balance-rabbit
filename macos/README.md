@@ -15,9 +15,9 @@
 ## 快速开始
 
 ```bash
-open "pet/余额兔.app"          # 直接运行
+open "macos/余额兔.app"          # 直接运行
 # 或者
-./pet/build.sh                 # 重新编译（改代码后用）
+./macos/build.sh                 # 重新编译（改代码后用）
 ```
 
 第一次运行会弹窗让你填自己的 `sk-` 开头 API Key（只存进本机钥匙串，按 macOS 用户隔离）。
@@ -94,12 +94,12 @@ cd pet
 ```
 
 依赖：Xcode Command Line Tools（`swiftc`）。编译时会顺带生成 `build/preview/*.png` 预览图和应用图标，
-产物为 `pet/余额兔.app`（ad-hoc 签名，本机运行无需额外授权）。
+产物为 `macos/余额兔.app`（ad-hoc 签名，本机运行无需额外授权）。
 
 ## 目录结构
 
 ```
-pet/
+macos/
 ├── Sources/
 │   ├── main.swift          # 入口、--render / --stats / --enable-login 等调试命令
 │   ├── AppDelegate.swift   # 窗口、菜单、刷新调度、低余额通知
@@ -119,9 +119,9 @@ pet/
 ## 调试命令
 
 ```bash
-pet/余额兔.app/Contents/MacOS/BalancePet --stats          # 命令行打印余额与统计
-pet/余额兔.app/Contents/MacOS/BalancePet --render 目录     # 生成预览图/图标
-pet/余额兔.app/Contents/MacOS/BalancePet --enable-login   # 命令行开启自启
+macos/余额兔.app/Contents/MacOS/BalancePet --stats          # 命令行打印余额与统计
+macos/余额兔.app/Contents/MacOS/BalancePet --render 目录     # 生成预览图/图标
+macos/余额兔.app/Contents/MacOS/BalancePet --enable-login   # 命令行开启自启
 ```
 
 ## 已知限制
